@@ -1,8 +1,29 @@
 <!DOCTYPE html>
 <title> Rishi Ponnapalli </title>
+<head>
+    <script>
+        async function fetchDecimalTime() {
+            const url =
+                "https://decimaltime.azurewebsites.net/api/DecimalTime?code=gKGFLgM9GhtZTqzVEjI_nlWs0VSeBwpB233B7SxgNV2OAzFujg8iSQ==";
+            const response = await fetch(url);
+            const data = await response.text();
+            document.getElementById("decimalTime").innerHTML = data;
+        }
 
+        async function clearDecimalTime() {
+            document.getElementById("decimalTime").innerHTML = "";
+        }
+    </script>
+
+</head>
 <body>
     <h1>About me</h1>
     <p>Hi! my name is Rishi Ponnapalli, and I am 16 years old. I am a member of the Tech Tigers, a world class FTC team.</p>
     <p> This is our <a href="https://www.techtigers.team" target="_blank"> Team Website </a> </p>
+
+    <h1>Decimal Time</h1>
+    <p>This is my decimal time project:</p>
+    <button onclick="fetchDecimalTime()">Get Decimal Time</button>
+    <button onclick="clearDecimalTime()">Clear</button>
+    <div id="decimalTime"></div>
 </body>
