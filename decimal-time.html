@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Decimal Time </title>
+        <script>
+            async function fetchDecimalTime() {
+                const url =
+                    "https://decimaltime.azurewebsites.net/api/DecimalTime?code=gKGFLgM9GhtZTqzVEjI_nlWs0VSeBwpB233B7SxgNV2OAzFujg8iSQ==";
+                const response = await fetch(url);
+                const data = await response.text();
+                document.getElementById("decimalTime").innerHTML = data;
+            }
+
+            async function clearDecimalTime() {
+                document.getElementById("decimalTime").innerHTML = "";
+            }
+        </script>
+    </head>
+    <body>
+        <h1><center>Decimal Time</center></h1>
+        <p>This is my decimal time project (Using EST):</p>
+        <button onclick="fetchDecimalTime()">Get Decimal Time</button>
+        <button onclick="clearDecimalTime()">Clear</button>
+        <div id="decimalTime"></div>
+        <p> What's so different about decimal time? Well, it uses multiples of 10s instead of 12s. For instance: </p>
+        <ul>
+            <li> Each day is split into 2 halfs, with each half being 10 decimal hours long </li>
+            <li> Each hour is 100 decimal minutes long </li>
+            <li> Each minute is 10 decimal seconds long </li>
+        </ul>
+        <p> A decimal second is about 4.32 regular seconds, so the decimal second can still be used for counting time. A day ends up being 20000 decimal seconds, a nice number,
+            instead of 86400 regular seconds. </p>
+
+        <p> Here is an analog clock using decimal time: </p>
+
+        <center> 
+        <img src="clock.jpeg" width=400 height=400>
+        <h4> 3:00:09 Decimal Time </h4>
+        </center>
+        <center> <b> <a href="index.html"> Home </a> </b> <center>
+    </body>
+</html> 
